@@ -12,6 +12,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+gem 'thin'
 gem 'jquery-rails'
 gem 'google-api-client'
 gem 'json', '~> 1.7.7'
