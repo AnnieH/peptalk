@@ -17,7 +17,6 @@ gem 'jquery-rails'
 gem 'google-api-client'
 gem 'json', '~> 1.7.7'
 gem "omniauth-google-oauth2"
-gem 'google_oauth_calendar' , :git => 'git@github.com:deafgreatdane/google_oauth_calendar.git'
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "database_cleaner", ">= 1.0.0.RC1", :group => :test
 gem "email_spec", ">= 1.4.0", :group => :test
