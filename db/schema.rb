@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120826102855) do
+ActiveRecord::Schema.define(:version => 20130601223044) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -42,6 +42,11 @@ ActiveRecord::Schema.define(:version => 20120826102855) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "token"
+    t.string   "refresh_token"
+    t.datetime "token_expires_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

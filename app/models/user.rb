@@ -14,6 +14,18 @@ class User < ActiveRecord::Base
   # override Devise method
   # no password is required when the account is created; validate password when the user sets one
   validates_confirmation_of :password
+
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.provider = auth['provider']
+      user.uid = auth['uid']
+      if auth['info']
+         user.name = auth['info']['name'] || ""
+         user.email = auth['info']['email'] || ""
+      end
+    end
+  end
+
   def password_required?
     if !persisted?
       !(password != "")
