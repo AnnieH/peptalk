@@ -11,4 +11,8 @@ RailsPrelaunchSignup::Application.routes.draw do
   resources :users do
     get 'invite', :on => :member
   end
+  
+  resource :make_call
+  match ':controller(/:action(.:format))'
+  match ':controller(/:action(/:id(.:format)))'
 end
