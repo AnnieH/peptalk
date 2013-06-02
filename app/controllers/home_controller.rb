@@ -9,6 +9,10 @@ class HomeController < ApplicationController
 
       @calendars = result.data
     end
-
+  def edit
+    if user_signed_in?
+    	@user = current_user
+    end
+  end
   end
 end
