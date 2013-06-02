@@ -1,13 +1,13 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   # Secrets for testing localhost
-  client_id = '436815569780-64n4601k4s6bm2s2e8vchvc6olvkp75k.apps.googleusercontent.com'
-  client_secret = 'hWPj5SdhwCGxtQugL5bZRi7T'
-  redirect_uri = 'http://localhost/auth/google_oauth2/callback'
+  # client_id = '436815569780-64n4601k4s6bm2s2e8vchvc6olvkp75k.apps.googleusercontent.com'
+  # client_secret = 'hWPj5SdhwCGxtQugL5bZRi7T'
+  # redirect_uri = 'http://localhost/auth/google_oauth2/callback'
 
   # Secrets for productions
-  # client_id = '436815569780.apps.googleusercontent.com'
-  # client_secret = 'JgCzST8OZwPZGH2exxQqypQ1'
-  # redirect_uri = 'http://www.peptalk.io/auth/google_oauth2/callback'
+  client_id = '436815569780.apps.googleusercontent.com'
+  client_secret = 'JgCzST8OZwPZGH2exxQqypQ1'
+  redirect_uri = 'http://www.peptalk.io/auth/google_oauth2/callback'
 
   scopes = [
       # we need the profile scope in order to login
