@@ -8,6 +8,8 @@ class HomeController < ApplicationController
       result = client.execute(:api_method => service.calendar_list.list)
 
       @calendars = result.data
+      # event_results = client.execute(:api_method => service.)
+      # @events = 
     end
 
   end

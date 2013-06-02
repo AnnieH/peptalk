@@ -2,7 +2,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   # Secrets for testing localhost
   client_id = '436815569780-64n4601k4s6bm2s2e8vchvc6olvkp75k.apps.googleusercontent.com'
   client_secret = 'hWPj5SdhwCGxtQugL5bZRi7T'
-  redirect_uri = 'https://localhost:3000/auth/google_oauth2/callback'
+  redirect_uri = 'http://localhost/auth/google_oauth2/callback'
 
   # Secrets for productions
   # client_id = '436815569780.apps.googleusercontent.com'
