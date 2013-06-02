@@ -5,7 +5,7 @@ RailsPrelaunchSignup::Application.routes.draw do
 
   match '/signout' => 'sessions#destroy', :as => :signout
 
-  match '/signin' => 'sessions#new', :as => :signin
+  match '/signup' => 'sessions#new', :as => :signup
 
   match '/auth/:provider/callback' => 'sessions#create'
 
