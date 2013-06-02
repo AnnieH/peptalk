@@ -21,7 +21,11 @@
 			  <p style="color: rgb(90,90,90)" class="lead">
 				Customized wake-up calls from a real human using information from your daily calendar.
 			  </p>
-			  <a class="btn btn-large btn-primary" onclick="window.open('http://peptalk-angelhackatx.s3.amazonaws.com/Memo.mp3')">Play a Sample!</a>
+			  <em>Listen to a sample below!</em><hr />
+
+			  <audio controls>
+			  	<source src='http://peptalk-angelhackatx.s3.amazonaws.com/Memo.mp3' type='audio/mpeg'>Your browswer does not support the audio element
+			  </audio>
 			</div>
 			<div class="span4 offset1 ">
 			  <img style="width: 400px; min-width: 400px" src="<%=@root_url.to_s%>/images/PepTalk.jpg" />
