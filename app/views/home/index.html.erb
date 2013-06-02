@@ -3,9 +3,11 @@
         Greetings <%= current_user.name %>
         [<%= link_to "sign out", signout_path %>]
       <ul>
-        <% @calendars.items.each do |calendar| %>
-            <li><%= calendar["summary"] %></li>
+        <strong>All your events from your primary calendar</strong>
+        <% @events.items.each do |event| %>
+        	<li><%= event.summary %></li>
         <% end %>
+
       </ul>
     <% else %>
         <div id="myCarousel" class="slide" data-pause="remove">
