@@ -1,14 +1,23 @@
 <div>
   <h3>Add Phone Number</h3>
-  <%= form_tag do %>
+  <%= form_tag('/make_call', :method => :put) do %>
   	<%= text_field_tag :phone_number %><br/>
-  	<%= submit_tag "Add Number", :class => "btn btn-primary" %>
-  	<button class="btn"><%= link_to("Make test call", :controller => :make_calls, :action => :make_voice_call, :phone_number => params[:phone_number]) %></button>
+  	<!-- <%= submit_tag "Add Number", :class => "btn btn-primary" %> -->
+    <%= submit_tag "Make Test Call", :controller => :make_calls, :action => :make_voice_call %>
+  	<!-- <button class="btn"><%= link_to("Make test call", :controller => :make_calls, :action => :make_voice_call, :phone_number => params[:phone_number]) %></button> -->
   <% end %>
   </div>
+      <%= form_for @user, :url => edit_user_registration_path(@user) do |f| %>
+        <%= select_tag(:day, options_for_select([['Monday', 1], ['Tuesday', 2], ['Wednesday', 3], [ 'Thursday', 4], ['Friday', 5]], 1)) %>
+        <%= select_tag(:time, options_for_select([['6:00 AM', 1], ['6:30 AM', 2], ['7:00 AM', 3], [ '8:00 AM', 4], ['8:30 AM', 5], ['9:00 AM', 6]], 3)) %>
+        <%= select_tag(:voice, options_for_select([['Peter', 1], ['Paul', 2], ['Mary', 3], [ 'Jane', 4], ['Alex', 5]], 4)) %>
+        <%= f.submit 'Save preferences' %>
+      <% end %>
 
     	<hr>
-    	<div class="container">
+    
+
+    	<!-- <div class="container">
         <table class="table">
           <thead>
             <tr>
@@ -153,4 +162,4 @@
               <td><i class="icon-volume-up"></i></td>
             </tr>
           </table>
-          </div>
+          </div> -->

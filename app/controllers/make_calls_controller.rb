@@ -6,18 +6,20 @@ class MakeCallsController < ApplicationController
   end
 
   def make_voice_call
+    current_user.phone_number = params[:phone_number]
+    default_append = "+1"
     @twilio_client = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
 
     @twilio_client.account.calls.create(
       :from => '+15124002709',
-      #:to => '+15126698296',
-      :to => params[:phone_number],
+      :to => "#{default_append}#{params[:phone_number]}",
       :url => 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient'
       #:url => 'http://s3.amazonaws.com/peptalk-angelhackatx-junk/daily.xml'
     )
-    
-    redirect_to 'home#edit'
+    current_user.save!
+    redirect_to :root, :notice => "A test call and voice message will be sent to your phone shortly."
 
+    #redirect_to 'home#edit'
   end
   
 end

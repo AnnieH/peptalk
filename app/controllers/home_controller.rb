@@ -2,6 +2,10 @@ class HomeController < ApplicationController
   require 'google/api_client'
   require 'client_builder'
   def index
+    @user = current_user
+    if user_signed_in?
+      @user = current_user
+    end
     if (user_signed_in? )
       client = ClientBuilder.get_client(current_user)
       service = client.discovered_api('calendar', 'v3')
@@ -13,6 +17,7 @@ class HomeController < ApplicationController
       # @events = event_results.data
     end
   def edit
+    @user = current_user
     if user_signed_in?
     	@user = current_user
     end

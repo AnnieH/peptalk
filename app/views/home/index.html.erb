@@ -3,7 +3,32 @@
       <ul>
       	<h3>We've connected your Google account and your primary calendar.</h3>
         <strong>All your events from your primary calendar</strong>
-   		<p>Filer text here, dashboard select</p>
+   		<div>
+		  <h3>Add Phone Number</h3>
+		  <%= form_tag('/make_call', :method => :put) do %>
+		  	<%= text_field_tag :phone_number %><br/>
+		  	<!-- <%= submit_tag "Add Number", :class => "btn btn-primary" %> -->
+		    <%= submit_tag "Make Test Call", :controller => :make_calls, :action => :make_voice_call %>
+		  	<!-- <button class="btn"><%= link_to("Make test call", :controller => :make_calls, :action => :make_voice_call, :phone_number => params[:phone_number]) %></button> -->
+		  <% end %>
+		</div>
+		<h3>Setup your call preferences:</h3>
+	      <%= form_for @user, :url => edit_user_registration_path(@user) do |f| %>
+	      	<%= hidden_field_tag 'user_id', current_user.id %>
+	        <%= select_tag('user[day]', options_for_select([['Monday', 'Monday'], ['Tuesday', 'Tuesday'], ['Wednesday', 'Wednesday'], [ 'Thursday', 'Thursday'], ['Friday', 'Friday']], 'Monday')) %>
+	        <%= select_tag('user[time]', options_for_select([['6:00 AM', '6:00 AM'], ['6:30 AM', '6:30 AM'], ['7:00 AM', '7:00 AM'], [ '8:00 AM', '8:00 AM'], ['8:30 AM', '8:30 AM'], ['9:00 AM', '9:00 AM']], '7:00 AM')) %>
+	        <%= select_tag('user[voice]', options_for_select([['Peter', 'Peter'], ['Paul', 'Paul'], ['Mary', 'Mary'], [ 'Jane', 'Jane'], ['Alex', 'Alex']], 'Peter')) %>
+	        <%= f.submit 'Save preferences' %>
+	      <% end %>
+
+		   <hr>
+		<h3>Your current settings</h3>
+	    <div>
+         <p>Phone Number: <%= current_user.phone_number unless current_user.phone_number.blank? %></p>
+         <p>Preferred Day: <%= current_user.day unless current_user.day.blank? %></p>
+         <p>Preferred Call Time: <%= current_user.time unless current_user.time.blank? %></p>
+         <p>Preferred Caller: <%= current_user.voice unless current_user.voice.blank? %></p>     
+	    </div>
       </ul>
     <% else %>
         <div id="myCarousel" class="slide" data-pause="remove">
