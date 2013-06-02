@@ -12,6 +12,10 @@ class HomeController < ApplicationController
       #                                :parameters => {'calendarId' => 'primary'})
       # @events = event_results.data
     end
-
+  def edit
+    if user_signed_in?
+    	@user = current_user
+    end
+  end
   end
 end

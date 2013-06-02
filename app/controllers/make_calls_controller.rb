@@ -10,12 +10,13 @@ class MakeCallsController < ApplicationController
 
     @twilio_client.account.calls.create(
       :from => '+15124002709',
-      :to => '+15126698296',
+      #:to => '+15126698296',
+      :to => params[:phone_number],
       :url => 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient'
       #:url => 'http://s3.amazonaws.com/peptalk-angelhackatx-junk/daily.xml'
     )
     
-    redirect_to '/make_calls'
+    redirect_to 'home#edit'
 
   end
   

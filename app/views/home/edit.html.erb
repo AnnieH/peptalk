@@ -1,0 +1,156 @@
+<div>
+  <h3>Add Phone Number</h3>
+  <%= form_tag do %>
+  	<%= text_field_tag :phone_number %><br/>
+  	<%= submit_tag "Add Number", :class => "btn btn-primary" %>
+  	<button class="btn"><%= link_to("Make test call", :controller => :make_calls, :action => :make_voice_call, :phone_number => params[:phone_number]) %></button>
+  <% end %>
+  </div>
+
+    	<hr>
+    	<div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <td>Day</td>
+              <td>Time</td>
+              <td>Voice</td>
+              <td>Sample</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>
+                <div class="input-append bootstrap-timepicker">
+                  <input id="timepicker1" type="text" value="7:00 AM" timepicker="timepicker" class="input-small">
+                  <span class="add-on"><i class="icon-time"></i></span>
+                </div>
+              </td>
+              <td>
+                <select>
+                  <option>Peter</option>
+                  <option>Paul</option>
+                  <option>Mary</option>
+                  <option>Jane</option>
+                  <option>Alex</option>
+                </select>
+              </td>
+              <td><i class="icon-volume-up"></i></td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>
+                <div class="input-append bootstrap-timepicker">
+                  <input id="timepicker1" type="text" value="7:00 AM" timepicker="timepicker" class="input-small">
+                  <span class="add-on"><i class="icon-time"></i></span>
+                </div>
+              </td>
+              <td>
+                <select>
+                  <option>Peter</option>
+                  <option>Paul</option>
+                  <option>Mary</option>
+                  <option>Jane</option>
+                  <option>Alex</option>
+                </select>
+              </td>
+              <td><i class="icon-volume-up"></i></td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>
+                <div class="input-append bootstrap-timepicker">
+                  <input id="timepicker1" type="text" value="7:00 AM" timepicker="timepicker" class="input-small">
+                  <span class="add-on"><i class="icon-time"></i></span>
+                </div>
+              </td>
+              <td>
+                <select>
+                  <option>Peter</option>
+                  <option>Paul</option>
+                  <option>Mary</option>
+                  <option>Jane</option>
+                  <option>Alex</option>
+                </select>
+              </td>
+              <td><i class="icon-volume-up"></i></td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>
+                <div class="input-append bootstrap-timepicker">
+                  <input id="timepicker1" type="text" value="7:00 AM" timepicker="timepicker" class="input-small">
+                  <span class="add-on"><i class="icon-time"></i></span>
+                </div>
+              </td>
+              <td>
+                <select>
+                  <option>Peter</option>
+                  <option>Paul</option>
+                  <option>Mary</option>
+                  <option>Jane</option>
+                  <option>Alex</option>
+                </select>
+              </td>
+              <td><i class="icon-volume-up"></i></td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>
+                <div class="input-append bootstrap-timepicker">
+                  <input id="timepicker1" type="text" value="7:00 AM" timepicker="timepicker" class="input-small">
+                  <span class="add-on"><i class="icon-time"></i></span>
+                </div>
+              </td>
+              <td>
+                <select>
+                  <option>Peter</option>
+                  <option>Paul</option>
+                  <option>Mary</option>
+                  <option>Jane</option>
+                  <option>Alex</option>
+                </select>
+              </td>
+              <td><i class="icon-volume-up"></i></td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>
+                <div class="input-append bootstrap-timepicker">
+                  <input id="timepicker1" type="text" value="7:00 AM" timepicker="timepicker" class="input-small">
+                  <span class="add-on"><i class="icon-time"></i></span>
+                </div>
+              </td>
+              <td>
+                <select>
+                  <option>Peter</option>
+                  <option>Paul</option>
+                  <option>Mary</option>
+                  <option>Jane</option>
+                  <option>Alex</option>
+                </select>
+              </td>
+              <td><i class="icon-volume-up"></i></td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>
+                <div class="input-append bootstrap-timepicker">
+                  <input id="timepicker1" type="text" value="7:00 AM" timepicker="timepicker" class="input-small">
+                  <span class="add-on"><i class="icon-time"></i></span>
+                </div>
+              </td>
+              <td>
+                <select>
+                  <option>Peter</option>
+                  <option>Paul</option>
+                  <option>Mary</option>
+                  <option>Jane</option>
+                  <option>Alex</option>
+                </select>
+              </td>
+              <td><i class="icon-volume-up"></i></td>
+            </tr>
+          </table>
+          </div>

@@ -8,7 +8,11 @@ RailsPrelaunchSignup::Application.routes.draw do
   match '/signup' => 'sessions#new', :as => :signup
 
   match '/auth/:provider/callback' => 'sessions#create'
+  
+  match '/edit' => 'home#edit'
 
+  match '/turk' => 'home#turk'
+  
   authenticated :user do
     root :to => 'home#index'
   end
