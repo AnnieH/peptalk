@@ -12,5 +12,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :google_oauth2, CLIENT_ID, CLIENT_SECRET,
            {:scope =>scopes.join(" "), 
            	access_type: 'offline', 
-           	redirect_uri:'http://localhost/auth/google_oauth2/callback'}
+           	redirect_uri:'http://www.peptalk.io/auth/google_oauth2/callback'}
 end
