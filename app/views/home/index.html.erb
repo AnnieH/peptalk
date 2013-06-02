@@ -1,13 +1,9 @@
 <p>
     <%- if user_signed_in? %>
-        Greetings <%= current_user.name %>
-        [<%= link_to "sign out", signout_path %>]
       <ul>
+      	<h3>We've connected your Google account and your primary calendar.</h3>
         <strong>All your events from your primary calendar</strong>
-        <% @events.items.each do |event| %>
-        	<li><%= event.summary %></li>
-        <% end %>
-
+   		<p>Filer text here, dashboard select</p>
       </ul>
     <% else %>
         <div id="myCarousel" class="slide" data-pause="remove">
