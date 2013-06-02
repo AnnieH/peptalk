@@ -1,6 +1,11 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  CLIENT_ID = '436815569780.apps.googleusercontent.com'
-  CLIENT_SECRET = 'JgCzST8OZwPZGH2exxQqypQ1'
+  # Secrets for testing localhost
+  CLIENT_ID = '436815569780-64n4601k4s6bm2s2e8vchvc6olvkp75k.apps.googleusercontent.com'
+  CLIENT_SECRET = 'hWPj5SdhwCGxtQugL5bZRi7T'
+
+  # Secrets for productions
+  # CLIENT_ID = '436815569780.apps.googleusercontent.com'
+  # CLIENT_SECRET = 'JgCzST8OZwPZGH2exxQqypQ1'
 
   scopes = [
       # we need the profile scope in order to login
