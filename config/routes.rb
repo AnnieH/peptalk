@@ -29,7 +29,8 @@ RailsPrelaunchSignup::Application.routes.draw do
     get 'invite', :on => :member
   end
   resources :make_calls, :only => :index
-  put '/make_call', to: "make_calls#make_voice_call"
+  put '/make_test_call', to: "make_calls#make_test_call"
+  put '/test_call;', to: "make_call#test_call"
   match ':controller(/:action(.:format))'
   match ':controller(/:action(/:id(.:format)))'
 end
