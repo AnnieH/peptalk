@@ -32,6 +32,7 @@ class MakeCallsController < ApplicationController
       r.Say 'Hello and welcome to PepTalk dot I O', :voice => 'woman'
       r.Play 'http://peptalk-angelhackatx.s3.amazonaws.com/Memo.mp3'
     end
+    response.text
   end
   
 end
