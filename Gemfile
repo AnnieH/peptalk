@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'rest-client'
 gem 'rails', '3.2.13'
 
 group :development do

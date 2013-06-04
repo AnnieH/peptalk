@@ -1,13 +1,18 @@
 class MakeCallsController < ApplicationController
   ACCOUNT_SID = 'AC1638dc295425dc18a352b6ad09e07bee'
   AUTH_TOKEN = '8d276c1b5958e73e91d934b2e5e6b555'
-  
+
   def index
   end
 
   def make_test_call
     # tropo_token = '2119b2644bd45d49a6f0510e03e73ed8b5330c0fca0ea842ac8f10ebc791da40e5e2409e081f596cb573ff30'
-    # tropo_url = "http://api.tropo.com/1.0/sessions?action=create&token=#{tropo_token}&numberToDial=#{params[:phone_number]}"
+    # # tropo_url = "http://api.tropo.com/1.0/sessions?action=create&token=#{tropo_token}&numberToDial=#{params[:phone_number]}"
+    # RestClient.get 'https://api.tropo.com/1.0/sessions', {:params => {
+    #     :action => 'create',
+    #     :token => tropo_token,
+    #     :numberToDial => params[:phone_number]}
+    #   }
 
     current_user.phone_number = params[:phone_number]
     default_append = "+1"
