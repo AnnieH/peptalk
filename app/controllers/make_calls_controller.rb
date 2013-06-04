@@ -10,15 +10,13 @@ class MakeCallsController < ApplicationController
 
   def make_test_call
     current_user.phone_number = params[:phone_number]
-    
-
-    # default_append = "+1"
-    # @twilio_client = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
+    default_append = "+1"
+    @twilio_client = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
 
     @twilio_client.account.calls.create(
       :from => '+12105260449',
       :to => "#{default_append}#{params[:phone_number]}",
-      :url => 'http://www.peptalk.io/test_call'
+      :url => 'http://localhost/test_call'
       #:url => 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient'
       #:url => 'http://s3.amazonaws.com/peptalk-angelhackatx-junk/daily.xml'
     )
