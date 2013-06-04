@@ -2,8 +2,8 @@ class MakeCallsController < ApplicationController
   ACCOUNT_SID = 'AC1638dc295425dc18a352b6ad09e07bee'
   AUTH_TOKEN = '8d276c1b5958e73e91d934b2e5e6b555'
 
-  TROPO_TOKEN = '2119b2644bd45d49a6f0510e03e73ed8b5330c0fca0ea842ac8f10ebc791da40e5e2409e081f596cb573ff30'
-  TROPO_URL = "http://api.tropo.com/1.0/sessions?action=create&token=#{TROPO_TOKEN}&numberToDial=#{params[:phone_number]}"
+  #TROPO_TOKEN = '2119b2644bd45d49a6f0510e03e73ed8b5330c0fca0ea842ac8f10ebc791da40e5e2409e081f596cb573ff30'
+  #TROPO_URL = "http://api.tropo.com/1.0/sessions?action=create&token=#{TROPO_TOKEN}&numberToDial=#{params[:phone_number]}"
 
   def index
   end
@@ -16,7 +16,7 @@ class MakeCallsController < ApplicationController
     @twilio_client.account.calls.create(
       :from => '+12105260449',
       :to => "#{default_append}#{params[:phone_number]}",
-      :url => 'http://localhost/test_call'
+      :url => 'http://www.peptalk.io/test_call'
       #:url => 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient'
       #:url => 'http://s3.amazonaws.com/peptalk-angelhackatx-junk/daily.xml'
     )

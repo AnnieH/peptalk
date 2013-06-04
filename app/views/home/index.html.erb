@@ -5,10 +5,10 @@
         <strong>All your events from your primary calendar</strong>
    		<div>
 		  <h3>Add Phone Number</h3>
-		  <%= form_tag('/make_call', :method => :put) do %>
+		  <%= form_tag('/make_test_call', :method => :put) do %>
 		  	<%= text_field_tag :phone_number %><br/>
 		  	<!-- <%= submit_tag "Add Number", :class => "btn btn-primary" %> -->
-		    <%= submit_tag "Make Test Call", :controller => :make_calls, :action => :make_voice_call %>
+		    <%= submit_tag "Make Test Call", :controller => :make_calls, :action => :make_test_call %>
 		  	<!-- <button class="btn"><%= link_to("Make test call", :controller => :make_calls, :action => :make_voice_call, :phone_number => params[:phone_number]) %></button> -->
 		  <% end %>
 		</div>
