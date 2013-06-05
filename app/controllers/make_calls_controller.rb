@@ -21,8 +21,7 @@ class MakeCallsController < ApplicationController
     @twilio_client.account.calls.create(
       :from => '+12105260449',
       :to => "#{default_append}#{params[:phone_number]}",
-      :url => 'http://www.peptalk.io/test_call_2',
-      :method =>
+      :url => 'http://www.peptalk.io/test_call_2'
       #:url => 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient'
     )
     current_user.save!
