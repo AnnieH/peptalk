@@ -21,8 +21,8 @@ class MakeCallsController < ApplicationController
     @twilio_client.account.calls.create(
       :from => '+12105260449',
       :to => "#{default_append}#{params[:phone_number]}",
-      #:url => 'http://www.peptalk.io/test_call'
-      :url => 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient'
+      :url => 'http://www.peptalk.io/test_call'
+      #:url => 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient'
     )
     current_user.save!
     redirect_to :root, :notice => "A test call and voice message will be sent to your phone shortly."
@@ -32,7 +32,7 @@ class MakeCallsController < ApplicationController
 
   def test_call
     #build a response
-    response = Twilio.TwiML:Response.new do |r|
+    response = Twilio::TwiML::Response.new do |r|
       r.Say 'Hello and welcome to PepTalk dot I O', :voice => 'woman'
       r.Play 'http://peptalk-angelhackatx.s3.amazonaws.com/Memo.mp3'
     end
