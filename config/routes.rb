@@ -31,6 +31,7 @@ RailsPrelaunchSignup::Application.routes.draw do
   resources :make_calls, :only => :index
   put '/make_test_call', to: "make_calls#make_test_call"
   put '/test_call', to: "make_call#test_call"
+  put '/test_call_2', to: "make_call#test_call_2"
   match ':controller(/:action(.:format))'
   match ':controller(/:action(/:id(.:format)))'
 end
